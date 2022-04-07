@@ -1,37 +1,82 @@
 import React from "react";
 import Link from "next/link";
- 
+import Signup from './components/Seller/Signup';
+import Login from './components/Seller/Login';
 
-const Practice = () => {
-  return (
+function LoginButton(props) {
+    return (
+      <button onClick={props.onClick}>
+        Create an account first! Sign Up
+      </button>
+    );
+  }
+  
+  function LogoutButton(props) {
+    return (
+      <button onClick={props.onClick}>
+        Already have an account? Login
+      </button>
+    );
+  }
+  function Greeting(props) {
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn) {
+      return <Signup/>;
+    }
+    return <Login/>;
+  }
+  
+  class Sellermain extends React.Component {
+    constructor(props) {
+      super(props);
+      this.handleLoginClick = this.handleLoginClick.bind(this);
+      this.handleLogoutClick = this.handleLogoutClick.bind(this);
+      this.state = {isLoggedIn: true};
+    }
+  
+    handleLoginClick() {
+      this.setState({isLoggedIn: true});
+    }
+  
+    handleLogoutClick() {
+      this.setState({isLoggedIn: false});
+    }
+  
+    render() {
+      const isLoggedIn = this.state.isLoggedIn;
+      let button;
+      if (isLoggedIn) {
+        button = <LogoutButton onClick={this.handleLogoutClick} />;
+      } else {
+        button = <LoginButton onClick={this.handleLoginClick} />;
+      }
+  
+      return (
     <>
+      <Link href="/seller">
+        <img
+          className="cursor-pointer h-10 w-10 m-8"
+          src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
+        />
+      </Link>
+<Greeting isLoggedIn={isLoggedIn} />
 
-      <div className="rounded-lg shadow-lg bg-white max-w-sm border-8  ">
-        <a href={"/product/wear-the-code"}>
-          <img
-            className="rounded-t-lg"
-            src="https://static.autox.com/uploads/2016/12/m_royal-enfield-himalayan_18.jpg"
-            alt=""
-          />
-        </a>
-        <div className="p-6">
-          <h5 className="text-gray-900 text-xl font-medium mb-2">
-            Royal enfield himalayan
-          </h5>
-          <p className="text-gray-700 text-base mb-4">Basic details</p>
-          <Link href={"/product/wear-the-code"}>
-            <button
-              type="button"
-              className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-            >
-              Book Now
-            </button>
-          </Link>
+      <div className="flex flex-row justify-center">
+        <div className="text-grey-dark mt-6">
+          <a
+            className="no-underline border-b border-blue text-blue"
+          >
+{button}
+          </a>
         </div>
       </div>
-
     </>
-  );
-};
+      );
+    }
+  }
 
-export default Practice;
+
+
+
+
+export default Sellermain;

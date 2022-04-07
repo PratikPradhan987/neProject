@@ -1,9 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
+// import Button from '@mui/material/Button';
+{/* <Button className="bg-black" variant="contained">Contained</Button> */}
 
 import Main from "../components/Main landing page/Main";
-import Footer from "../components/Main landing page/Footer";
 import Imageslider from "../components/Main landing page/Imageslider";
+import ContactUs from "../components/Main landing page/ContactUs";
+import Details from "../components/Main landing page/Details";
+
 
 export default function Home() {
   return (
@@ -15,8 +19,9 @@ export default function Home() {
       </Head>
       
         <Imageslider />
+        <Details/>
         <Main/>
-        <Footer/>
+        <ContactUs/>
     </>
   );
 }

@@ -1,8 +1,11 @@
 import React from 'react'
+import Practice from '../practice'
 
 const Cab = () => {
   return (
-    <div>This is Cab page</div>
+    <div>
+    <Practice/>
+    </div>
   )
 }
 

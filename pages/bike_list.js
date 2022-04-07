@@ -1,17 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import Practice from "../practice";
+import Bikeinfo from "../components/Bike page/bikeinfo";
 
 const Bike_list = () => {
   return (
     <>
       <section>
         <div className=" container flex flex-wrap  ">
-          <Practice />
-          <Practice />
-          <Practice />
-          <Practice />
-          <Practice />
+          <Bikeinfo />
+          <Bikeinfo />
+          <Bikeinfo />
+          <Bikeinfo />
+          <Bikeinfo />
         </div>
       </section>
     </>
