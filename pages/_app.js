@@ -22,7 +22,7 @@ import { useRouter } from 'next/router';
 function Myapp({Component, pageProps}){
 const router = useRouter();
 const { pathname } = router;
-const noNav = ['/seller','/Sellermain' ,'/user_login'];
+const noNav = ['/user_signup','/Seller/seller','/Sellermain' ,'/user_login','/Seller/SellerSignup','/Seller/SellerLogin'];
 
 return(<>
 {noNav.includes(pathname) ? null : <Navbar/>}

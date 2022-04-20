@@ -4,7 +4,7 @@ import Link from "next/link";
 const Sellermain = () => {
   return (
     <>
-      <div className="bg-grey-lighter">
+      <div className="bg-grey-lighter my-48">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
           <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 className="mb-8 text-3xl text-center">Sign up</h1>
@@ -59,8 +59,23 @@ const Sellermain = () => {
               </a>
             </div>
           </div>
+          <div className="flex flex-row justify-center">
+            <div className="text-grey-dark mt-6">
+              <a className="no-underline border-b border-blue text-blue">
+                Already have an account? <Link href="/Seller/SellerLogin">Login</Link>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <footer className="flex-shrink-0  mt-2 border-t-2 border-black">
+        <Link href="/">
+          <h2 className="h-16 w-full flex justify-center py-2 px-4 font-medium  text-white bg-pink-600 hover:bg-pink-700">
+            Go Back to Home Page
+          </h2>
+        </Link>
+      </footer>
     </>
   );
 };

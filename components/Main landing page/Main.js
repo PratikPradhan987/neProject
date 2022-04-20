@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 pt-8 pb-24 mx-auto">
           <div className="flex flex-col">
             <div className="h-1 bg-gray-200 rounded overflow-hidden">
               <div className="w-24 h-full bg-indigo-500"></div>
@@ -15,11 +15,7 @@ const Main = () => {
                 About Sikkim
               </h1>
               <p className="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-              Sikkim, state in India,is located in the northeastern part of the country, in the eastern Himalayas. It is one of the smallest states in India. Sikkim is bordered by the Tibet Autonomous Region of China to the north and northeast, by Bhutan to the southeast, by the Indian state of West Bengal to the south, and by Nepal to the west. The capital is Gangtok, in the southeastern part of the state
-
-A part of the Eastern Himalaya, Sikkim is notable for its biodiversity, including alpine and subtropical climates, as well as being a host to Kangchenjunga, the highest peak in India and third highest on Earth. Sikkim's capital and largest city is Gangtok. Almost 35% of the state is covered by the Khangchendzonga National Park.
-
-Long a sovereign political entity, Sikkim became a protectorate of India in 1950 and an Indian state in 1975. Its small size notwithstanding, Sikkim is of great political and strategic importance for India because of its location along several international boundaries. Area 2,740 square miles (7,096 square km). Pop. (2011) 607,688.
+              Sikkim is the top most tours & travel destination in India. It is one of the most politically stable and peaceful place in India. This landlocked state is blessed with some of the most spectacular landscapes, flora and fauna making it a haven for adventure enthusiasts and naturalists. Lying at an elevation of 8,586 metres, the state's highest point is the summit of Kanchenjunga, the third highest peak of the world. Sikkim tourism has lots to offer a discerning traveller. Foreigners here can visit Gangtok, Rumtek, Phodong, Pemayangtse and the Yuksom -Zongri trekking route on the basis of restricted area permits which can be obtained. There are numerous Lakes and Monasteries which make the hill station vibrant and lively. To experience complete rejuvenation, book our Sikkim tour packages with airfare.
               </p>
             </div>
           </div>
@@ -29,62 +25,32 @@ Long a sovereign political entity, Sikkim became a protectorate of India in 1950
                 <img
                   alt="content"
                   className="object-cover object-center h-full w-full"
-                  src="https://dummyimage.com/1203x503"
+                  src="https://i0.wp.com/www.talkerbud.com/wp-content/uploads/2020/01/People-of-Sikkim.jpg?resize=460%2C336"
                 />
               </div>
-              <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                Shooting Stars
+              <h2 className="text-center text-xl font-medium title-font text-gray-900 mt-5">
+                People and Culture
               </h2>
               <p className="text-base leading-relaxed mt-2">
-                Swag shoivdigoitch literally meditation subway tile tumblr
-                cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                ethical XOXO lumbersexual.
+              The People of Sikkim consist of three ethnic groups, that is, Lepcha, Bhutia and Nepali. Communities of different hues intermingle freely in Sikkim to constitute a homogenous blend. Hindu Temples coexist with Buddhist Monasteries, Churches, Mosque and Gurudwara. The predominant Communities are Lepchas, Bhutias and Nepalese.
               </p>
-              <a className="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+             
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
                 <img
                   alt="content"
                   className="object-cover object-center h-full w-full"
-                  src="https://dummyimage.com/1204x504"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC0l2c6cbe0vg7QBnhDXlqgvWRMxvBfk5iDg&usqp=CAU"
                 />
               </div>
-              <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
-                The Catalyzer
+              <h2 className="text-center text-xl font-medium title-font text-gray-900 mt-5">
+                Taste of Sikkim
               </h2>
               <p className="text-base leading-relaxed mt-2">
-                Swag shoivdigoitch literally meditation subway tile tumblr
-                cold-pressed. Gastropub street art beard dreamcatcher neutra,
-                ethical XOXO lumbersexual.
+              Sikkimese food is largely based on culinary vegetables from jungle like Ningro (Fern), Nakima (Wild Lily), Baas ko Tusa (Bamboo-Shoot), Cheuw (Mushrooms), etc. Even organic vegetables such as Iskus (Chayote/ Squash), Pharsi (pumpkin), Pharsi ko Munta (Pumpkin leaves), Iskus ko Munta (Chayote/ Squash leaves), Kinema (Fermented Soyabean), Ruk Tamatar ( Tree Tomato) and Dalle Chillies (Hot Fire Balls), etc. Locally fermented beverage such as Arra ( Homemade Whiskey), and Chaang / Tongba (Fermented Millet) also compliments the Sikkimese cuisine.
               </p>
-              <a className="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              
             </div>
             <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
               <div className="rounded-lg h-64 overflow-hidden">
@@ -94,7 +60,7 @@ Long a sovereign political entity, Sikkim became a protectorate of India in 1950
                   src="https://dummyimage.com/1205x505"
                 />
               </div>
-              <h2 className="text-xl font-medium title-font text-gray-900 mt-5">
+              <h2 className="text-center text-xl font-medium title-font text-gray-900 mt-5">
                 The 400 Blows
               </h2>
               <p className="text-base leading-relaxed mt-2">
@@ -102,23 +68,14 @@ Long a sovereign political entity, Sikkim became a protectorate of India in 1950
                 cold-pressed. Gastropub street art beard dreamcatcher neutra,
                 ethical XOXO lumbersexual.
               </p>
-              <a className="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
+              
             </div>
           </div>
+          <div className="mt-8 h-1 bg-gray-200 rounded overflow-hidden mb-5">
+              <div className="w-24 h-full bg-indigo-500"></div>
+            </div>
         </div>
+
       </section>
     </>
   );

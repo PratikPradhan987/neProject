@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Serviceprovided from "../components/Seller/Serviceprovided";
+import Serviceprovided from "../../components/Seller/Serviceprovided";
 
 const seller = () => {
   return (
@@ -19,16 +19,6 @@ const seller = () => {
 
       <Serviceprovided />
 
-      <div className="grid justify-items-end mx-16 ">
-        <h2 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-12">
-          Click on join as seller to Host your ads
-        </h2>
-        <Link href="/Sellermain">
-          <button className="border-black border-2  bg-pink-50 h-14 rounded-full w-32">
-            <h2 className="text-center font-bold">Join as a seller</h2>
-          </button>
-        </Link>
-      </div>
       <footer className="flex-shrink-0  mt-2 border-t-2 border-black">
         <Link href="/">
           <h2 className="h-16 w-full flex justify-center py-2 px-4 font-medium  text-white bg-pink-600 hover:bg-pink-700">

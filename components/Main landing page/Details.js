@@ -22,68 +22,54 @@ const Details = () => {
           <div className="flex flex-wrap -m-4">
             <Link href="/tour">
             <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="cursor-pointer bg-gray-100 p-6 rounded-lg">
 
-                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+              <div className="cursor-pointer h-full text-center bg-gray-100 p-6 rounded-lg">
+              <img className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cdn-icons-png.flaticon.com/512/854/854894.png"/>
+                <h3 className="text-lg   mb-4 tracking-widest text-indigo-500 text-xs font-medium title-font">
                   Tour
-                </h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                  Chichen Itza
-                </h2>
+                </h3>       
                 <p className="leading-relaxed text-base">
-                  Fingerstache flexitarian street art 8-bit waistcoat.
-                  Distillery hexagon disrupt edison bulbche.
+                If you are already in Sikkim and wondering what else you can do apart from the regular sightseeing, attend the folk dance performance by locals. You will be delighted at the charm of vibrant Sikkimese diversity. Sikkim culture is also mirrored in the drama performances and the locals are very friendly and accepting and will make you feel welcomed.
                 </p>
               </div>
             </div>
             </Link>
             <Link href="/bike">
             <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="cursor-pointer bg-gray-100 p-6 rounded-lg">
-
-                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+              <div className="cursor-pointer h-full text-center bg-gray-100 p-6 rounded-lg">
+            <img className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cdn-icons-png.flaticon.com/512/7210/7210696.png"/>
+            <h3 className="text-lg   mb-4 tracking-widest text-indigo-500 text-xs font-medium title-font">
                   Bike Rentals
                 </h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                  Colosseum Roma
-                </h2>
                 <p className="leading-relaxed text-base">
-                  Fingerstache flexitarian street art 8-bit waistcoat.
-                  Distillery hexagon disrupt edison bulbche.
+                Bike rental in gangtok can be the best option for explore the mountain trails in Sikkim. Bike rental in Gangtok are on top of the list among youths nowadays, especially when it comes to exploring curvy hilly roads of the North East part of India.
                 </p>
               </div>
             </div>            
             </Link>
             <Link href="/cab">
             <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="cursor-pointer bg-gray-100 p-6 rounded-lg">
-
-                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+              <div className="cursor-pointer h-full text-center bg-gray-100 p-6 rounded-lg">
+            <img className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cdn-icons.flaticon.com/png/512/3393/premium/3393345.png?token=exp=1650459793~hmac=f85e203071ef94326f8aa4d202bf71bd"/>
+            <h3 className="text-lg   mb-4 tracking-widest text-indigo-500 text-xs font-medium title-font">
                   Cab Rentals
                 </h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                  Great Pyramid of Giza
-                </h2>
                 <p className="leading-relaxed text-base">
-                  Fingerstache flexitarian street art 8-bit waistcoat.
-                  Distillery hexagon disrupt edison bulbche.
+                Many travelers choose to rent a car in Sikkim, as it is the best mode of transport for covering short or long distances, allowing plenty of freedom and more flexibility to explore unique landscapes. There are plenty of iconic routes that serve as road trip destinations and allow people to visit several places.
                 </p>
               </div>
             </div>            
             </Link>
-            <Link href="/tour">
+            <Link href="/other">
             <div className="xl:w-1/4 md:w-1/2 p-4">
-              <div className="cursor-pointer bg-gray-100 p-6 rounded-lg">
-
-                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+              <div className="cursor-pointer h-full text-center bg-gray-100 p-6 rounded-lg">
+            <img className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cdn-icons.flaticon.com/png/512/2661/premium/2661418.png?token=exp=1650459842~hmac=a4cfca3f58a9d6aaf6166a8d4b1347fa"/>
+            <h3 className="text-lg   mb-4 tracking-widest text-indigo-500 text-xs font-medium title-font">
                   Others
                 </h3>
-                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
-                  San Francisco
-                </h2>
                 <p className="leading-relaxed text-base">
-                  Fingerstache flexitarian street art 8-bit waistcoat.
-                  Distillery hexagon disrupt edison bulbche.
+                  While visiting Sikkim prepare yourself for various adventures such as River Rafting Experience in Teesta, Paragliding and Hang Gliding-the World from Above, Trekking-an Enthusiastic Adventure for Adrenaline Junkie, Mountaineering-mount up like an Eagle, Helicopter Ride-get an aerial view of Sikkim and Yak Safari to the winning Mountainous range of Sikkim.
+
                 </p>
               </div>
             </div>            
@@ -92,6 +78,7 @@ const Details = () => {
           </div>
         </div>
       </section>
+      
     </>
   );
 };

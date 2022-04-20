@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import NavDropdown from "./NavbarDropdown";
+import Othersmenu from "./Othersdropdownmenu";
 
 const Navbar = () => {
+
+
   return (
     <>
       {/* <nav className="shadow-sm flex items-center justify-between flex-wrap  p-6">
@@ -53,7 +57,7 @@ const Navbar = () => {
       {/* </div> */}
       {/* </nav> */}
 
-      <header className="text-gray-600 body-font">
+      <header className="text-gray-600 body-font bg-white sticky top-0 z-10">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link href="/">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
@@ -75,9 +79,10 @@ const Navbar = () => {
             <Link href="/cab">
               <a className="mr-5 hover:text-gray-900">Cab</a>
             </Link>
-            <Link href="/other">
+            {/* <Link href="/other">
               <a className="mr-5 hover:text-gray-900">Others</a>
-            </Link>            
+            </Link>             */}
+            <Othersmenu/>
             <Link href="/user_login">
               <a><img
                 src="https://cdn-icons.flaticon.com/png/512/2102/premium/2102647.png?token=exp=1649259483~hmac=7a6122ead442e69b23dc2de015180321"
@@ -85,20 +90,10 @@ const Navbar = () => {
               /></a>
             </Link>
           </nav>
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
+          {/* <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
             Button
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+          </button> */}
+          <NavDropdown/>
         </div>
       </header>
     </>
