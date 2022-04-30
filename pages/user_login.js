@@ -3,35 +3,28 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlinePhone } from "react-icons/ai";
 import { GiSharkJaws } from "react-icons/gi";
+import Image from "next/image";
+import { CgBackspace } from "react-icons/cg";
 
 const user_login = () => {
   return (
     <>
-      <Link href="/">
-        <img
-          className="cursor-pointer h-10 w-10 m-8"
-          src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
-        />
+      <Link passHref href="/">
+        <CgBackspace className="cursor-pointer h-10 w-10 m-8" />
       </Link>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <GiSharkJaws
-              className="mx-auto h-12 w-auto"
-            />
+            <GiSharkJaws className="mx-auto h-12 w-auto" />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Sign in to your account
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or
               <Link href="/user_signup">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  {" "}
-                  Signup
-                </a>
+                <p className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-500">
+                  Sign-up
+                </p>
               </Link>
             </p>
           </div>

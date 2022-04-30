@@ -22,10 +22,10 @@ function imagecab() {
       <Fade {...fadeProperties}>
         {/* // "-translate-y-6"> */}
         {images.map((each, index) => (
-          <div className="flex justify-center ">
+          <div key={index} className="flex justify-center ">
             <img
-              className="top rounded-lg w-5/6 sm:h-96 h-40"
-              key={index}
+              alt="Cab images"
+              className="object-contain top rounded-lg w-5/6 sm:h-96 h-40"
               // style={{ width: "100%" }}
               src={each}
             />

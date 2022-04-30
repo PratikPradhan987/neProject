@@ -1,6 +1,7 @@
 import React from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import Image from "next/image";
 
 const images = [
   "https://upload.wikimedia.org/wikipedia/commons/0/04/Makati_Skyline_for_banner.jpg",
@@ -19,10 +20,14 @@ const fadeProperties = {
 function Imageslider() {
   return (
     <div>
-      <Fade {...fadeProperties} >
+      <Fade {...fadeProperties}>
         {/* // "-translate-y-6"> */}
         {images.map((each, index) => (
-          <img 
+          <img
+            // width="100%"
+            // height={384}
+            // layout='responsive'
+            alt="Main Page Slider component"
             className="object-cover w-full object-center sm:h-96 h-40"
             key={index}
             // style={{ width: "100%" }}

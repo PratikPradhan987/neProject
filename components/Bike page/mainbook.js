@@ -1,20 +1,3 @@
-// import React from "react";
-// import Link from "next/link";
-
-// const Mainbook = () => {
-//   return (
-//     <>
-//       <div className="relative mt-5 w-full">
-//         <img
-//           className="object-cover sm:w-full m-0 object-center sm:h-96 h-auto"
-//           src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
-//         />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Mainbook;
 import React from "react";
 import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
@@ -39,10 +22,10 @@ function Mainbook() {
       <Fade {...fadeProperties}>
         {/* // "-translate-y-6"> */}
         {images.map((each, index) => (
-          <div className="flex justify-center">
+          <div key={index} className="flex justify-center ">
             <img
-              className="rounded-lg w-5/6 sm:h-96 h-40"
-              key={index}
+              alt="bike images"
+              className="object-contain top rounded-lg w-5/6 sm:h-96 h-40"
               // style={{ width: "100%" }}
               src={each}
             />

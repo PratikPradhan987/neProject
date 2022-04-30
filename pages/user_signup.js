@@ -1,14 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { GiSharkJaws } from "react-icons/gi";
+import { CgBackspace } from "react-icons/cg";
 
 const user_signup = () => {
   return (
     <div>
-      <Link href="/">
-        <img
+      <Link passHref href="/">
+        <CgBackspace
           className="cursor-pointer h-10 w-10 m-8"
-          src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
+          // src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
         />
       </Link>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -26,7 +27,7 @@ const user_signup = () => {
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
                   {" "}
-                  Signin
+                  Sign-in
                 </a>
               </Link>
             </p>
