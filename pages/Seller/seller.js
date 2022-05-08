@@ -23,7 +23,7 @@ const seller = () => {
 
       <footer className="flex-shrink-0  mt-2 border-t-2 border-black">
         <Link passHref href="/">
-          <h2 className="h-16 w-full flex justify-center py-2 px-4 font-medium  text-white bg-pink-600 hover:bg-pink-700">
+          <h2 className="hover:cursor-pointer h-16 w-full flex justify-center py-2 px-4 font-medium  text-white bg-pink-600 hover:bg-pink-700">
             Go Back to Home Page
           </h2>
         </Link>

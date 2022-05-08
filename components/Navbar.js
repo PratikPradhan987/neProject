@@ -4,8 +4,17 @@ import Link from "next/link";
 import NavDropdown from "./NavbarDropdown";
 import Othersmenu from "./Othersdropdownmenu";
 import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../src/contexts/AuthContext";
 
 const Navbar = () => {
+  const { currentUser, logout } = useAuth();
+  const Userlogout = (e) => {
+    e.preventDefault();
+    logout();
+  };
+  // console.table(currentUser);
+  // console.table(currentUser);
+
   return (
     <>
       <header className="text-gray-600 body-font bg-white sticky top-0 z-10">
@@ -37,10 +46,14 @@ const Navbar = () => {
               <a className="mr-5 hover:text-gray-900">Others</a>
             </Link>             */}
             <Othersmenu />
-            <Link passHref href="/user_login">
-                <FaUserCircle className="cursor-pointer mr-5 w-8 h-8 rounded-full" />
-            </Link>
-            <NavDropdown />
+            {!currentUser && (
+              <Link passHref href="/user_login">
+                <div>
+                  <FaUserCircle className="cursor-pointer mr-5 w-8 h-8 rounded-full" />
+                </div>
+              </Link>
+            )}
+            {currentUser &&<NavDropdown />}
           </nav>
           {/* <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
             Button

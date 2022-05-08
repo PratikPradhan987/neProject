@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useAuth } from "../../src/contexts/AuthContext";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Sellermain = () => {
+function Sellermain() {
+  const router = useRouter();
+  const { login, currentUser } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const Userlogin = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      toast("Credentials not valid.");
+      // alert("Credentials not valid.");
+    }
+    // else if(email || password){
+    //   const q = query(
+    //     collection(database, "users"),
+    //     where("email", "==", email)
+    //   );
+    // }
+    login(email, password)
+      .then((response) => {
+        router.push("/Seller/seller");
+        console.table(response);
+      })
+      .catch((error) => toast(error.code));
+  };
   return (
     <>
       <div className="bg-grey-lighter  my-48">
@@ -15,9 +43,13 @@ const Sellermain = () => {
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="email"
               placeholder="Email"
+              onChange={(event) => setEmail(event.target.value)}
+              value={email}
             />
 
             <input
+              onChange={(event) => setPassword(event.target.value)}
+              value={password}
               type="password"
               className="block border border-grey-light w-full p-3 rounded mb-4"
               name="password"
@@ -51,6 +83,7 @@ const Sellermain = () => {
             </div>
 
             <button
+              onClick={Userlogin}
               type="submit"
               className="border-4 border-black w-full text-center py-3 rounded bg-green text-black hover:bg-green-dark focus:outline-none my-1"
             >
@@ -76,6 +109,6 @@ const Sellermain = () => {
       </footer>
     </>
   );
-};
+}
 
 export default Sellermain;

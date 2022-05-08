@@ -1,7 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import { useAuth } from "../../src/contexts/AuthContext";
 
 const Serviceprovided = () => {
+  const { currentUser } = useAuth();
+
   const Service = [
     {
       img1: "https://cdn-icons-png.flaticon.com/512/854/854894.png",
@@ -28,31 +31,77 @@ const Serviceprovided = () => {
         <div className="container px-5 py-16 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
-              Welcome
+              Welcome! {currentUser && `the user :${currentUser.email}`}
+              {!currentUser && `You need to SignUp or Login to access these pages`}
             </h2>
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">
               Services We provide
             </h1>
           </div>
-          <div className="flex flex-wrap -m-4">
-            {Service.map((icon, index) => {
-              return (
-                <div key={index} className="p-4 md:w-1/3">
-                  <Link passHref href={icon.link}>
-                    <a>
-                      <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                        <div className="flex items-center mb-3">
-                          <div className="overflow-hidden w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
-                            <img src={icon.img1} />
-                          </div>
-                          <h2 className="text-gray-900 text-lg title-font font-medium">
-                            {icon.heading}
-                          </h2>
-                        </div>
-                        <div className="flex-grow">
-                          <img className="h-28 mx-auto" src={icon.img1} />
 
-                          {/* <a className="mt-3 text-indigo-500 inline-flex items-center">
+          {!currentUser && (
+            <div className="flex flex-wrap -m-4">
+              {Service.map((icon, index) => {
+                return (
+                  <div key={index} className="p-4 md:w-1/3">
+                    <Link passHref href="SellerLogin">
+                      <a>
+                        <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                          <div className="flex items-center mb-3">
+                            <div className="overflow-hidden w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+                              <img src={icon.img1} />
+                            </div>
+                            <h2 className="text-gray-900 text-lg title-font font-medium">
+                              {icon.heading}
+                            </h2>
+                          </div>
+                          <div className="flex-grow">
+                            <img className="h-28 mx-auto" src={icon.img1} />
+
+                            {/* <a className="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a> */}
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {currentUser && (
+            <div className="flex flex-wrap -m-4">
+              {Service.map((icon, index) => {
+                return (
+                  <div key={index} className="p-4 md:w-1/3">
+                    <Link passHref href={icon.link}>
+                      <a>
+                        <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                          <div className="flex items-center mb-3">
+                            <div className="overflow-hidden w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+                              <img src={icon.img1} />
+                            </div>
+                            <h2 className="text-gray-900 text-lg title-font font-medium">
+                              {icon.heading}
+                            </h2>
+                          </div>
+                          <div className="flex-grow">
+                            <img className="h-28 mx-auto" src={icon.img1} />
+
+                            {/* <a className="mt-3 text-indigo-500 inline-flex items-center">
                             Learn More
                             <svg
                               fill="none"
@@ -66,14 +115,15 @@ const Serviceprovided = () => {
                               <path d="M5 12h14M12 5l7 7-7 7"></path>
                             </svg>
                           </a> */}
+                          </div>
                         </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
     </>

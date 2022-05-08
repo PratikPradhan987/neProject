@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 function Choosecab() {
+
   const [startDate, setStartDate] = useState(new Date());
   return (
     <>
@@ -24,10 +25,8 @@ function Choosecab() {
                   autoComplete="country-name"
                   className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option>Xylo </option>
-                  <option>Sumo Gold </option>
-                  <option>Thar</option>
-                  <option>Innova Crysta</option>
+                  <option>4 Seater</option>
+                  <option>7 Seater</option>
                 </select>
               </div>
               <div className="mt-10 grid">
@@ -49,7 +48,7 @@ function Choosecab() {
                         >
                           <option
                             className="text-gray-600 text-xs italic"
-                            selected="selected"
+                            // defaultValue="selected"
                             value="From"
                           >
                             From
@@ -83,7 +82,7 @@ function Choosecab() {
                         >
                           <option
                             className="text-gray-600 text-xs italic"
-                            selected="selected"
+                            // selected="selected"
                             value="To"
                           >
                             To
@@ -169,12 +168,22 @@ function Choosecab() {
             </div>
 
             <div className="px-4 py-3  text-right sm:px-6">
-              <button
-                type="submit"
-                className="flex mx-auto text-white bg-gray-900 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-              >
-                Continue Booking
-              </button>
+                <button
+                  type="submit"
+                  className="flex mx-auto text-white bg-gray-900 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
+                  Continue Booking
+                </button>
+              {/* {!currentUser && (
+                <Link passHref href="/user_login">
+
+                <button
+                  className="flex mx-auto text-white bg-gray-500 border-0 py-2 px-8 rounded text-lg"
+                >
+                  Login to Continue
+                </button>
+                </Link>
+              )} */}
             </div>
           </div>
         </form>

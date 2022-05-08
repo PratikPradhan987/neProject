@@ -1,16 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { AiOutlinePhone } from "react-icons/ai";
 import { GiSharkJaws } from "react-icons/gi";
 import Image from "next/image";
 import { CgBackspace } from "react-icons/cg";
+import { useAuth } from "../src/contexts/AuthContext";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const user_login = () => {
+function User_login() {
+  const router = useRouter();
+  const { login, currentUser, signInWithGoogle } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signUpWithGoogle = () => {
+    // e.preventDefault();
+    // console.log(email,password)
+    // if (!email || !password) {
+    // toast({
+    //   description: 'Credentials not valid.',
+    //   status: 'error',
+    //   duration: 9000,
+    //   isClosable: true,
+    // })
+    //   alert("Credentials not valid.");
+    // }
+    // setIsSubmitting(true);
+    signInWithGoogle()
+      .then((user) => {
+        router.push("/");
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const Userlogin = (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      toast('Credentials not valid.')
+      // alert("Credentials not valid.");
+    }
+    login(email, password)
+      .then((response) => {
+        router.push("/");
+        console.table(response);
+      })
+      .catch((error) => toast(error.code));
+  };
+
   return (
     <>
+      <ToastContainer />
       <Link passHref href="/">
+      <a>
         <CgBackspace className="cursor-pointer h-10 w-10 m-8" />
+        </a>
       </Link>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
@@ -19,14 +66,14 @@ const user_login = () => {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Sign in to your account
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            <div className="mt-2 text-center text-sm text-gray-600">
               Or
-              <Link href="/user_signup">
+              <Link passHref href="/user_signup">
                 <p className="cursor-pointer font-medium text-indigo-600 hover:text-indigo-500">
                   Sign-up
                 </p>
               </Link>
-            </p>
+            </div>
           </div>
           <form className="mt-8 space-y-6" action="#" method="POST">
             <input type="hidden" name="remember" value="true" />
@@ -36,6 +83,8 @@ const user_login = () => {
                   Email address
                 </label>
                 <input
+                  onChange={(event) => setEmail(event.target.value)}
+                  value={email}
                   id="email-address"
                   name="email"
                   type="email"
@@ -50,6 +99,8 @@ const user_login = () => {
                   Password
                 </label>
                 <input
+                  onChange={(event) => setPassword(event.target.value)}
+                  value={password}
                   id="password"
                   name="password"
                   type="password"
@@ -91,6 +142,7 @@ const user_login = () => {
 
             <div>
               <button
+                onClick={Userlogin}
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
@@ -115,19 +167,22 @@ const user_login = () => {
           </form>
           <hr className=""></hr>
 
-          <div className="justify-center flex flex-row">
-            <div className="items-center mr-8  w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <div className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div
+              onClick={signUpWithGoogle}
+              className="cursor-pointer items-center mr-8  w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
               <FcGoogle className="mr-4 " /> Google
             </div>
 
-            <div className="items-center w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            {/* <div className="cursor-pointer items-center w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
               <AiOutlinePhone className="mr-4" /> Ph Number
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
     </>
   );
-};
+}
 
-export default user_login;
+export default User_login;

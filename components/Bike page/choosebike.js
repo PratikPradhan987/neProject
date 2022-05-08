@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Choosebike = () => {
+
   const [startDate, setStartDate] = useState(new Date());
   return (
     <>
@@ -11,25 +12,7 @@ const Choosebike = () => {
         <form action="#" method="POST">
           <div className="sm:rounded-md">
             <div className="px-4 py-5 bg-white sm:p-6">
-              <div className="col-span-6 py-2 sm:col-span-3">
-                <label
-                  htmlFor="country"
-                  className="text-center block text-bold font-bold text-gray-700"
-                >
-                  CHOOSE A BIKE
-                </label>
-                <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
-                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option>Royal Enfield</option>
-                  <option>Pulsar 150</option>
-                  <option>Avenger</option>
-                  <option>TVS Raider 125</option>
-                </select>
-              </div>
+             
               <div className="mt-10 grid">
                 <div className="grid grid-flow-row">
                   <div className="grid grid-cols-2 gap-6">
@@ -47,9 +30,23 @@ const Choosebike = () => {
                           autoComplete="country-name"
                           className="|| mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         >
-                          <option>Gangtok</option>
-                          <option>Namchi</option>
-                          <option>Rangpo</option>
+                          <option
+                            className="text-gray-600 text-xs italic"
+                            // selected="selected"
+                            value="From"
+                          >
+                            From
+                          </option>
+                          <option value="1">Gangtok</option>
+                          <option value="2">Namchi</option>
+                          <option value="4">Bagdogra Airport</option>
+                          <option value="5">Siliguri</option>
+                          <option value="6">Melli</option>
+                          <option value="7">Rangpo</option>
+                          <option value="8">Singtam</option>
+                          <option value="9">32nd Mile</option>
+                          <option value="10">Chitrey</option>
+                          <option value="13">Coronation Bridge</option>
                         </select>
                       </div>
                     </div>
@@ -139,12 +136,22 @@ const Choosebike = () => {
             </div>
 
             <div className="px-4 py-3  text-right sm:px-6">
-              <button
-                type="submit"
-                className="flex mx-auto text-white bg-gray-900 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-              >
-                Continue Booking
-              </button>
+                <button
+                  type="submit"
+                  className="flex mx-auto text-white bg-gray-900 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                >
+                  Continue Booking
+                </button>
+              {/* {!currentUser && (
+                <Link passHref href="/user_login">
+
+                <button
+                  className="flex mx-auto text-white bg-gray-500 border-0 py-2 px-8 rounded text-lg"
+                >
+                  Login to Continue
+                </button>
+                </Link>
+              )} */}
             </div>
           </div>
         </form>

@@ -1,16 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { GiSharkJaws } from "react-icons/gi";
 import { CgBackspace } from "react-icons/cg";
+import { useAuth } from "../src/contexts/AuthContext";
+import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { database } from "../src/utils/init-firebase";
+import {
+  collection,
+  query,
+  where,
+  addDoc,
+  getDocs,
+  doc,
+  setDoc,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
 
-const user_signup = () => {
+function User_signup() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [tel, setTel] = useState("");
+  const { register, currentUser } = useAuth();
+
+  async function writeUserData(user) {
+    const docRef = await setDoc(doc(database, "users", user.uid), user);
+  }
+
+  const signUp = (e) => {
+    e.preventDefault();
+    // console.log(email,password)
+    if (!email || !password) {
+      toast("Credentials not valid.");
+      // alert("Credentials not valid.");
+    }
+    // setIsSubmitting(true);
+    register(email, password)
+      .then((response) => {
+        var user = {
+          type: "Customer",
+          name: name,
+          phone: tel,
+          uid: response.user.uid,
+          email: response.user.email,
+        };
+        writeUserData(user);
+        toast(response);
+        toast("you have successfully signed up");
+        router.push("/");
+      })
+      .catch((error) => toast(error.message));
+  };
+
   return (
     <div>
+      <ToastContainer />
       <Link passHref href="/">
-        <CgBackspace
-          className="cursor-pointer h-10 w-10 m-8"
-          // src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
-        />
+        <div>
+          <CgBackspace className="cursor-pointer h-10 w-10 m-8" />
+        </div>
       </Link>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
@@ -36,11 +88,11 @@ const user_signup = () => {
             <input type="hidden" name="remember" value="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Name
-                </label>
+                <label className="sr-only">Name</label>
                 <input
-                  id="email-address"
+                  onChange={(event) => setName(event.target.value)}
+                  value={name}
+                  id="Full-Name"
                   name="fullname"
                   type="text"
                   autoComplete="name"
@@ -48,11 +100,27 @@ const user_signup = () => {
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Full Name"
                 />
-              </div><div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
+              </div>
+              <div>
+                <label className="sr-only">Ph number</label>
                 <input
+                  onChange={(event) => setTel(event.target.value)}
+                  value={tel}
+                  id="Ph-number"
+                  name="Ph number"
+                  type="tel"
+                  autoComplete="tel"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Ph number"
+                />
+              </div>
+
+              <div>
+                <label className="sr-only">Email address</label>
+                <input
+                  onChange={(event) => setEmail(event.target.value)}
+                  value={email}
                   id="email-address"
                   name="email"
                   type="email"
@@ -67,6 +135,8 @@ const user_signup = () => {
                   Password
                 </label>
                 <input
+                  onChange={(event) => setPassword(event.target.value)}
+                  value={password}
                   id="password"
                   name="password"
                   type="password"
@@ -78,10 +148,9 @@ const user_signup = () => {
               </div>
             </div>
 
-            
-
             <div>
               <button
+                onClick={signUp}
                 type="submit"
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
@@ -108,6 +177,6 @@ const user_signup = () => {
       </div>
     </div>
   );
-};
+}
 
-export default user_signup;
+export default User_signup;
